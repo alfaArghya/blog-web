@@ -13,9 +13,11 @@
   "author": "Arghya Das",
   "license": "ISC",
   "dependencies": {
+    "@prisma/client": "^5.11.0",
     "@types/express": "^4.17.21",
     "dotenv": "^16.4.5",
     "express": "^4.19.1",
+    "prisma": "^5.11.0",
     "ts-node": "^10.9.2"
   }
 }
