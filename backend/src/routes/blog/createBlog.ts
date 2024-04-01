@@ -1,12 +1,23 @@
 import { Request, Response } from "express";
 import { PrismaClient } from "@prisma/client";
 import { status } from "../../responseStatus/responseStatus";
+import { createBlogInput } from "../../types";
 
 const createBlog = async (req: Request, res: Response) => {
   const title: string = req.body.title;
   const content: string = req.body.content;
   const authorId: string = req.body.userId;
   const prisma = new PrismaClient();
+
+  const { success } = createBlogInput.safeParse({
+    title,
+    content,
+  });
+
+  if (!success) {
+    res.status(status.InvalidInput).json({ msg: "Invalid inputs" });
+    return;
+  }
 
   try {
     const createBlog = await prisma.blog.create({

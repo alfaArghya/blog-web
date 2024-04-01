@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import * as dotenv from "dotenv";
 import * as argon2 from "argon2";
 import { status } from "../responseStatus/responseStatus";
+import { signinInput } from "../types";
 
 const prisma = new PrismaClient();
 dotenv.config();
@@ -11,6 +12,16 @@ dotenv.config();
 const signin = async (req: Request, res: Response) => {
   const username: string = req.body.username;
   const password: string = req.body.password;
+
+  const { success } = signinInput.safeParse({
+    username,
+    password,
+  });
+
+  if (!success) {
+    res.status(status.InvalidInput).json({ msg: "Invalid inputs" });
+    return;
+  }
 
   try {
     const user = await prisma.user.findFirst({
