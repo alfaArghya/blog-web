@@ -1,11 +1,13 @@
 import express from "express";
 import * as dotenv from "dotenv";
 import jwt, { JwtPayload } from "jsonwebtoken";
+import cors from "cors";
 import * as routes from "./routes/index";
 import { status } from "./responseStatus/responseStatus";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 dotenv.config();
 
 //create account
