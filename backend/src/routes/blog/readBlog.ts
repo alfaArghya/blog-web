@@ -9,6 +9,16 @@ const readBlog = async (req: Request, res: Response) => {
   try {
     const blog = await prisma.blog.findFirst({
       where: { id: id },
+      select: {
+        title: true,
+        content: true,
+        id: true,
+        author: {
+          select: {
+            username: true,
+          },
+        },
+      },
     });
 
     res.status(status.Success).json({

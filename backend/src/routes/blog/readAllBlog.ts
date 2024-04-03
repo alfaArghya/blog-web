@@ -6,7 +6,18 @@ const readAllBlog = async (req: Request, res: Response) => {
   const prisma = new PrismaClient();
 
   try {
-    const blogs = await prisma.blog.findMany();
+    const blogs = await prisma.blog.findMany({
+      select: {
+        title: true,
+        content: true,
+        id: true,
+        author: {
+          select: {
+            username: true,
+          },
+        },
+      },
+    });
 
     res.status(status.Success).json({
       msg: "read all blogs",
