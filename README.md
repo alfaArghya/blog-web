@@ -2,6 +2,35 @@
 
 it's a simple blogging application to read, write blogs.
 
+## How to run 🏃🏽‍♂️ locally?
+
+1. Backend
+
+   - First create a `.env` file at `backend` directory. then put this following data,
+
+   ```bash
+   PORT = 8080
+   JWT_Secret = "YourSecretPassword"
+   DATABASE_URL = "postgres connection string"
+   ```
+
+   - now run this command in `terminal`
+
+   ```bash
+   cd .\backend\   #go to the backend directory
+   npm install     #install npm package
+   npx prisma generate  #generate prisma client
+   npm run dev     #start the server
+   ```
+
+2. Frontend
+   - now run this command on another `terminal`
+   ```bash
+   cd .\frontend\   #go to the frontend directory
+   npm install     #install npm package
+   npm run dev     #start the application
+   ```
+
 ## Snapshot
 
 ### _Sign Up_
