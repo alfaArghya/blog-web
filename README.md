@@ -4,14 +4,29 @@ it's a simple blogging application to read, write blogs.
 
 ## Snapshot
 
-| Page          | Snapshot                              |
-| :------------ | ------------------------------------- |
-| _Sign Up_     | <img   src = "Public\signup.png">     |
-| _Sign In_     | <img   src = "Public\signin.png">     |
-| _Blogs_       | <img   src = "Public\blogs.png">      |
-| _Read Blog_   | <img   src = "Public\readBlog.png">   |
-| _Create Blog_ | <img   src = "Public\createBlog.png"> |
-| _Update Blog_ | <img   src = "Public\updateBlog.png"> |
+### _Sign Up_
+
+<img   src = "Public\signup.png">
+
+### _Sign In_
+
+<img   src = "Public\signin.png">
+
+### _Blogs_
+
+<img   src = "Public\blogs.png">
+
+### _Read Blog_
+
+<img   src = "Public\readBlog.png">
+
+### _Create Blog_
+
+<img   src = "Public\createBlog.png">
+
+### _Update Blog_
+
+<img   src = "Public\updateBlog.png">
 
 ### video demo
 
