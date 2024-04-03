@@ -1,6 +1,6 @@
 # Blog-web
 
-it's a simple blogging application to read, write blogs.
+it's a simple blogging application to read, and write blogs.
 
 ## How to run 🏃🏽‍♂️ locally?
 
@@ -35,29 +35,33 @@ it's a simple blogging application to read, write blogs.
 
 ### _Sign Up_
 
-<img   src = "Public\signup.png">
+<img   src = "public\signup.png">
 
 ### _Sign In_
 
-<img   src = "Public\signin.png">
+<img   src = "public\signin.png">
 
 ### _Blogs_
 
-<img   src = "Public\blogs.png">
+<img   src = "public\blogs.png">
 
 ### _Read Blog_
 
-<img   src = "Public\readBlog.png">
+<img   src = "public\readBlog.png">
 
 ### _Create Blog_
 
-<img   src = "Public\createBlog.png">
+<img   src = "public\createBlog.png">
 
 ### _Update Blog_
 
-<img   src = "Public\updateBlog.png">
+<img   src = "public\updateBlog.png">
 
 ### video demo
+
+
+https://github.com/alfaArghya/blog-web/assets/95538110/b39058b4-b477-498d-88fb-0c5370bf037a
+
 
 ## Tech Stack
 
