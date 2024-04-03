@@ -22,6 +22,7 @@ export const Auth = () => {
       );
       const jwt = response.data.token;
       localStorage.setItem("token", jwt);
+      localStorage.setItem("username", signupInput.username);
       navigate("/blogs");
     } catch (err) {
       alert("Invalid inputs");
