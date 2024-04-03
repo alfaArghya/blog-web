@@ -13,3 +13,12 @@ export const updateBlogInput = zod.object({
 
 export type CreatePostType = zod.infer<typeof createBlogInput>;
 export type UpdatePostType = zod.infer<typeof updateBlogInput>;
+
+export interface BlogType {
+  id: string;
+  title: string;
+  content: string;
+  author: {
+    username: string;
+  };
+}
