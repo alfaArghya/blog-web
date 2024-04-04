@@ -6,17 +6,21 @@ import { API_URL } from "../config";
 import { useNavigate } from "react-router-dom";
 
 function CreateBlog() {
+  // taking input and update them
   const [postInput, setPostInput] = useState<CreatePostType>({
     title: "",
     content: "",
   });
+
+  //navigate to other page
   const navigate = useNavigate();
 
   const sendRequest = async () => {
     try {
+      //send request to server
       const response = await axios.post(`${API_URL}/api/v1/blog`, postInput, {
         headers: {
-          Authorization: localStorage.getItem("token"),
+          Authorization: localStorage.getItem("token"), //auth token from local storage
         },
       });
       const postId = response.data.id;
@@ -26,6 +30,7 @@ function CreateBlog() {
       alert("Invalid inputs");
     }
   };
+
   return (
     <div>
       <Appbar />

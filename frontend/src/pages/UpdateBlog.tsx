@@ -6,21 +6,28 @@ import axios from "axios";
 import { API_URL } from "../config";
 
 const UpdateBlog = () => {
-  const navigate = useNavigate();
+  // first load the data from local storage & update them with new data
   const [updatePost, setUpdatePost] = useState<UpdatePostType>({
     title: localStorage.getItem("blogTitle") || "",
     content: localStorage.getItem("blogContent") || "",
     id: localStorage.getItem("blogId") || "",
   });
 
+  //navigate to other page
+  const navigate = useNavigate();
+
   const sendRequest = async () => {
     try {
+      //send request to server
       const response = await axios.put(`${API_URL}/api/v1/blog`, updatePost, {
         headers: {
-          Authorization: localStorage.getItem("token"),
+          Authorization: localStorage.getItem("token"), //auth token from local storage
         },
       });
+
       const postId = response.data.id;
+
+      //free up the local storage
       localStorage.removeItem("blogTitle");
       localStorage.removeItem("blogContent");
       localStorage.removeItem("blogId");
@@ -30,6 +37,7 @@ const UpdateBlog = () => {
       alert("Invalid inputs");
     }
   };
+
   return (
     <div>
       <Appbar />

@@ -1,5 +1,6 @@
 import { Auth } from "../components/signup/Auth";
 import { Quote } from "../components/Quote";
+
 const Signup = () => {
   return (
     <div>

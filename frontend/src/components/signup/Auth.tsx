@@ -6,23 +6,31 @@ import axios from "axios";
 import { API_URL } from "../../config";
 
 export const Auth = () => {
+  // taking user data & update them
   const [signupInput, setSignupInput] = useState<SignupType>({
     name: "",
     email: "",
     username: "",
     password: "",
   });
+
+  //navigate to other page
   const navigate = useNavigate();
 
   const sendRequest = async () => {
     try {
+      // send user data to server
       const response = await axios.post(
         `${API_URL}/api/v1/users/signup`,
         signupInput
       );
       const jwt = response.data.token;
+
+      //store response into local storage
       localStorage.setItem("token", jwt);
       localStorage.setItem("username", signupInput.username);
+
+      //navigate to blogs route
       navigate("/blogs");
     } catch (err) {
       alert("Invalid inputs");

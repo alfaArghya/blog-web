@@ -3,10 +3,13 @@ import { PrismaClient } from "@prisma/client";
 import { status } from "../../responseStatus/responseStatus";
 
 const readBlog = async (req: Request, res: Response) => {
+  // Get id from url params
   const id: string = req.params.id;
-  const prisma = new PrismaClient();
+
+  const prisma = new PrismaClient(); // prisma client
 
   try {
+    // retrieve blog
     const blog = await prisma.blog.findFirst({
       where: { id: id },
       select: {
@@ -21,6 +24,7 @@ const readBlog = async (req: Request, res: Response) => {
       },
     });
 
+    // return blog
     res.status(status.Success).json({
       msg: "read the blog!",
       blog,

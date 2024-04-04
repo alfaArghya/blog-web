@@ -4,18 +4,23 @@ import { Link, useNavigate } from "react-router-dom";
 import { updateBlogType } from "../types";
 
 export const Delete = ({ id }: { id: string }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); //navigate to other page
+
   const sendRequest = async () => {
     try {
       const data = {
         id: id,
       };
-      const response = await axios.delete(`${API_URL}/api/v1/blog`, {
+
+      // send delete request to server
+      await axios.delete(`${API_URL}/api/v1/blog`, {
         data,
         headers: {
-          Authorization: localStorage.getItem("token"),
+          Authorization: localStorage.getItem("token"), //auth token for local storage
         },
       });
+
+      //navigate to blogs route
       navigate("/blogs");
     } catch (err) {
       alert("Can't delete");

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { API_URL } from "../config";
 import { BlogType } from "../types";
 
+//custom hook for retrieving all blogs
 export const useBlogs = () => {
   const [loading, setLoading] = useState(true);
   const [blogs, setBlogs] = useState<BlogType[]>([]);
@@ -27,6 +28,7 @@ export const useBlogs = () => {
   };
 };
 
+//custom hook for retrieving blog
 export const useBlog = ({ id }: { id: string }) => {
   const [loading, setLoading] = useState(true);
   const [blog, setBlog] = useState<BlogType>();

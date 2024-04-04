@@ -4,12 +4,15 @@ import { useBlog } from "../hooks";
 import BlogRead from "../components/BlogRead";
 
 const Blog = () => {
-  const { id } = useParams();
-  const { loading, blog } = useBlog({ id: id || "" });
+  const { id } = useParams(); //blog id from URL params
+  const { loading, blog } = useBlog({ id: id || "" }); //retrieve blog using custom hook
 
+  // can't load the blog
   if (loading) {
     return <div>Loading . . . . </div>;
   }
+
+  //load the blog
   return (
     <div>
       <Appbar />

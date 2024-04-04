@@ -3,9 +3,10 @@ import { PrismaClient } from "@prisma/client";
 import { status } from "../../responseStatus/responseStatus";
 
 const readAllBlog = async (req: Request, res: Response) => {
-  const prisma = new PrismaClient();
+  const prisma = new PrismaClient(); //ptisma client
 
   try {
+    // retrieve blogs
     const blogs = await prisma.blog.findMany({
       select: {
         title: true,
@@ -19,6 +20,7 @@ const readAllBlog = async (req: Request, res: Response) => {
       },
     });
 
+    //return blogs
     res.status(status.Success).json({
       msg: "read all blogs",
       blogs,

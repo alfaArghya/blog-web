@@ -2,8 +2,9 @@ import { Link, useNavigate } from "react-router-dom";
 import Avatar from "./Avatar";
 
 const Appbar = () => {
-  const navigate = useNavigate();
-  const username = localStorage.getItem("username");
+  const navigate = useNavigate(); //navigate to other page
+  const username = localStorage.getItem("username"); //retrieve username from localStorage
+
   return (
     <div className="border-b border-gray-200 flex justify-between px-10 py-4">
       <Link to={"/blogs"}>
